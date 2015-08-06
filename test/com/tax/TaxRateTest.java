@@ -27,4 +27,11 @@ public class TaxRateTest {
 
         assertEquals(10, taxRate.getTotalTaxRate(false, false),0.00);
     }
+
+    @Test
+    public void shouldKnowsHowToFixTaxRateForNonExemptibleGoodsAndImportedDuty() {
+        TaxRate taxRate = new TaxRate(10, 5);
+
+        assertEquals(15, taxRate.getTotalTaxRate(false, true),0.00);
+    }
 }

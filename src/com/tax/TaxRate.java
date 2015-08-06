@@ -14,6 +14,8 @@ public class TaxRate {
             return importedDuty;
         else if (!exemptible && !imported)
             return basic;
+        else if (!exemptible && imported)
+            return (basic + importedDuty);
         return 0.0;
     }
 }
