@@ -10,6 +10,8 @@ public class TaxRate {
     }
 
     public double getTotalTaxRate(boolean exemptible, boolean isImported) {
-        return 0;
+        if (isImported && exemptible)
+            return importedDuty;
+        return 0.0;
     }
 }
