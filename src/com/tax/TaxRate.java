@@ -9,9 +9,11 @@ public class TaxRate {
         this.importedDuty = importedDuty;
     }
 
-    public double getTotalTaxRate(boolean exemptible, boolean isImported) {
-        if (isImported && exemptible)
+    public double getTotalTaxRate(boolean exemptible, boolean imported) {
+        if (imported && exemptible)
             return importedDuty;
+        else if (!exemptible && !imported)
+            return basic;
         return 0.0;
     }
 }
